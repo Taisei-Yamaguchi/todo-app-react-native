@@ -6,9 +6,9 @@ import { loadListData, deleteList } from '../data/store';
 import ListCreate from '../components/list/ListCreate';
 import { setLoading } from '../redux/slice/LoadingSlice';
 import {useDispatch, useSelector } from 'react-redux';
-import { UseSelector } from 'react-redux';
 
-const ListPage = ({ navigation }) => {
+
+const ListPage = () => {
     const [lists, setLists] = useState([]);
     const dispatch =useDispatch()
     const loading =useSelector((state)=>state.loading.loading)

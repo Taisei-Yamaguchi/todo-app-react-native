@@ -76,7 +76,7 @@ export const saveTodo = async (text, createdAt, isDone, deadline, detail, listId
         const value = JSON.stringify({ text: text.trim(), createdAt, isDone, deadline, detail, listId }); // Trim whitespace
 
         await AsyncStorage.setItem(key, value);
-        console.log('save new todo: ', value);
+        // console.log('save new todo: ', value);
     } catch (error) {
         console.error('Error saving todo:', error);
     }
@@ -93,7 +93,7 @@ export const loadTodoData = async () => {
         const entryList = await AsyncStorage.multiGet(todoKeys);
         const todoDataArray = entryList.map(entry => JSON.parse(entry[1]));
         const sortedTodoDataArray = todoDataArray.sort((a, b) => b.createdAt - a.createdAt);
-        console.log('load:', sortedTodoDataArray);
+        // console.log('load:', sortedTodoDataArray);
         return sortedTodoDataArray;
     } catch (error) {
         console.error('Error loading todo:', error);

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity, Image } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Text} from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { format } from 'date-fns/format';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import SetDeadline from '../components/todo/setDeadline';
 import SetDetail from '../components/todo/setDetail';
 

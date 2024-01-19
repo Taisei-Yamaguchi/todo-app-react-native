@@ -25,7 +25,6 @@ const SetDeadline = ({ itemId }) => {
                     const todo = JSON.parse(todoString);
                     const deadlineDate = todo.deadline ? new Date(todo.deadline) : new Date();
 
-                    console.log('確認dead',todo)
                     setItem(todo);
                     setSelectedDate(deadlineDate);
                 }
@@ -54,7 +53,6 @@ const SetDeadline = ({ itemId }) => {
         try {
             dispatch(setLoading(true))
             const updatedItem = { ...item, deadline: date.toISOString() };
-            console.log(updatedItem);
             AsyncStorage.setItem(String(item.createdAt), JSON.stringify(updatedItem))
                 .then(() => {
                     console.log('Deadline updated successfully');

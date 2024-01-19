@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { saveList } from '../../data/store';
 import { setLoading } from '../../redux/slice/LoadingSlice';
-import { UseDispatch, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const ListCreate = ({ onListCreated }) => {
     const [listName, setListName] = useState('');

@@ -10,4 +10,4 @@
 9. <del>finish todo mes <br></del>
 10. app icon <br>
 11. setup mobile file<br>
-12. git<br>
+12.<del> git<br></del>

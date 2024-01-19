@@ -11,7 +11,7 @@ import { TodoFinishMes } from "./TodoFinishMes";
 
 export const TodoItems = () => {
     const [todoData, setTodoData] = useState([]);
-    const [listData, setListData] = useState([]);
+    
     const [showDoneItems, setShowDoneItems] = useState(false); 
     const navigation = useNavigation();
     const loading = useSelector((state) => state.loading.loading);
@@ -26,7 +26,7 @@ export const TodoItems = () => {
         const filteredTodo = initTodo.filter(todo => todo.listId === selectedListId);
         setTodoData(filteredTodo);
         const initList = await loadListData();
-        setListData(initList);
+        
     }
 
     // Done アイテムの表示・非表示をトグルする

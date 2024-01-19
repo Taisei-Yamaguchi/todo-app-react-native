@@ -22,7 +22,6 @@ const SetDetail = ({ itemId }) => {
                 if (matchingKeys.length > 0) {
                     const todoString = await AsyncStorage.getItem(matchingKeys[0]);
                     const todo = JSON.parse(todoString);
-                    console.log('確認detail', todo);
                     setItem(todo);
                     setUpdatedDetail(todo.detail);
                 }
@@ -35,14 +34,11 @@ const SetDetail = ({ itemId }) => {
     }, [itemId,loading]);
 
     const handleSaveChanges = async () => {
-        console.log('UPDATE DATA', updatedDetail);
         // Update detail in AsyncStorage
         try {
             dispatch(setLoading(true));
     
             const updatedItem = { ...item, detail: updatedDetail };
-            console.log('Updated Item:', updatedItem);
-    
             await AsyncStorage.setItem(String(item.createdAt), JSON.stringify(updatedItem));
             
             console.log('Detail updated successfully');
